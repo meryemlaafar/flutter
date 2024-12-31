@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "480815851814",
+    "project_id": "projetflutterdeep",
+    "storage_bucket": "projetflutterdeep.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480815851814:android:de7f081929f87b294df9e7",
+        "android_client_info": {
+          "package_name": "com.example.projetfinal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLo0ApZY9XbbhjArpn1f4oo0pmMJF5P_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

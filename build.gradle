@@ -1,0 +1,63 @@
+// Placez le bloc buildscript en haut du fichier
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.google.gms:google-services:4.4.8'  // Assurez-vous d'utiliser une version récente
+    }
+}
+
+// Ensuite, placez le bloc plugins après buildscript
+plugins {
+    id "com.android.application"
+    // Le plugin Flutter doit être appliqué après les plugins Android et Kotlin.
+    id "org.jetbrains.kotlin.android"  // Utilisez le plugin Kotlin Android correct
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace = "com.example.projetfinal"
+    compileSdk = 33  // Utilisez une version de SDK spécifique
+    ndkVersion = "21.4.7075529"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.projetfinal"
+        minSdk = 21
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+}
+
+flutter {
+    source = "../.."
+}
+
+// Appliquez le plugin Google Services à la fin
+apply plugin: 'com.google.gms.google-services'
